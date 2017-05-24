@@ -22,9 +22,6 @@ header {
 
 nav {
     float: left;
-    max-width: 640px;
-    margin-left: 40px;
-	//margin-right: 40px;
     padding: 1em;
 }
 
@@ -39,8 +36,7 @@ nav ul a {
 }
 
 section {
-    margin-left: 320px;
-    //border-left: 1px solid gray;
+	border-left: 1px solid gray;
     padding: 1em;
     overflow: hidden;
 }

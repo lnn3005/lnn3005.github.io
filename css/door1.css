@@ -21,14 +21,12 @@ header {
 
 
 #door{
-	float:left;
-    margin-left: 40px;
+
     padding: 1em;
 	text-align:left;
 }
 
 #rooster_puzzle {
-	margin-left: 500px;
     padding: 1em;
 	text-align:left;
 	overflow: hidden;
