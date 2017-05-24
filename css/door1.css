@@ -20,30 +20,21 @@ header {
 }
 
 
-nav {
-    float: left;
-    max-width: 640px;
+#door{
+	float:left;
     margin-left: 40px;
-	//margin-right: 40px;
     padding: 1em;
+	text-align:left;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-	margin-bottom:32px;
-}
-   
-nav ul a {
-    text-decoration: none;
+#rooster_puzzle {
+	margin-left: 500px;
+    padding: 1em;
+	text-align:left;
+	overflow: hidden;
 }
 
-section {
-    margin-left: 320px;
-    //border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
-}
+
 
 
 p.nav_header {
