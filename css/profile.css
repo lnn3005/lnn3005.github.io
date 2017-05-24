@@ -1,0 +1,51 @@
+body {
+	//font-style: oblique;
+	font-family:trebuchet ms;
+
+}
+
+header, footer {
+	background-color:#F5FFFF;
+    border-radius:10px;
+	border: 1px solid #00FFFF;
+    padding: 1em;
+    clear: left;
+    text-align: center;
+	//color: white;
+	//background-color: #99cc00;
+	//max-width:320px;
+	//margin-left: 320px;
+	//font-variant: small-caps;
+	
+}
+
+
+nav {
+    float: left;
+    max-width: 640px;
+    margin-left: 40px;
+	//margin-right: 40px;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+	margin-bottom:32px;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+section {
+    margin-left: 320px;
+    //border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+
+
+p.nav_header {
+	font-weight:bold;
+}
