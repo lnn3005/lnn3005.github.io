@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Door 1</title>
   <meta charset="utf-8">
@@ -7,15 +8,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
   <link rel="stylesheet" href="../css/door1.css">
+  
 </head>
 
 <body>
-<script src="script.js"></script>
+
 
 <section id="door">
-This is a locked door. Try to <span onclick="openDoor()">open</span> it?
+This is a locked door. There is a panel near the handle. <button onclick="displayPanel()">Try to enter a number?</button>
 
+<div id="panel">
+</div>
 
 <div id="door_status">
 </div>
@@ -37,16 +42,69 @@ This is a rooster.
 
 <div id="paper">
 </div>
+</section>
 
-<div onclick="displayClock()">
-What time is it?
-</div>
 
+
+<section id="clock_block">
+<p> A clock on the wall. The hour and minute hands can be adjusted freely. <p>
 <div id="clock">
+</div>
+<br>
+<p  onclick="displayClock()"> Try changing time? </p>
+<div id="clock_panel">
+<input id="hour" placeholder="Hour"><input id="minute" placeholder="minute">
+<button type="button" onclick="checkTime()">Change to this time</button>
 </div>
 </section>
 
 
+
+
+<section id="water_pouring_puzzle">
+<p> There are three cups; one is empty and two contain some water. </p>
+<button id="reset_button" onclick="initializeCups()"> Take a closer look? </button>
+<br>
+
+<div id="table" style="visibility:hidden">
+<div class="container">
+<div class="cup" id="cup0" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="water" id="water0"> 
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="cup" id="cup1" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="water" id="water1">
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="cup" id="cup2" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="water" id="water2">
+</div>
+</div>
+</div>
+</div>
+
+<div id="weight_1"></div>
+<div id="weight_2"></div>
+<div id="weight_3"></div>
+</section>
+
+
+
+
+<section id="scale_block">
+<p> A scale. It seems like it can measure the weight of the water cups. </p>
+<div id="scale" ondrop="dropOnScale(event)" ondragover="allowDrop(event)">
+<div id="weight_panel"> 0 </div>
+</div>
+<br>
+<p id="weight_info"> </p>
+</section>
 
 
 
@@ -55,6 +113,8 @@ What time is it?
 
 <div id="key_found">
 </div>
+
+
 
 </body>
 </html>

@@ -26,15 +26,89 @@ header {
 	text-align:left;
 }
 
-#rooster_puzzle {
+section {
     padding: 1em;
 	text-align:left;
 	overflow: hidden;
 }
 
-
-
-
-p.nav_header {
-	font-weight:bold;
+div.container {
+	float:left;
+	width: 100px;
+	height: 100px;
+	//position: absolute;
+	//background-color: red;
+	border: 1px solid white;
+	position:relative;
 }
+
+div.cup {
+	width: 40px;
+	position: relative;
+	left: 30px;
+	border: 1px solid black;
+	//border-radius: 5px;
+	border-top: white;
+}
+
+#cup0 {
+	top:20px;
+	height:80px;
+}
+
+#cup1 {
+	top:50px;
+	height:50px;
+}
+
+#cup2 {
+	top:70px;
+	height:30px;
+}
+
+
+div.water {
+	width: 38px;
+	//height: 50px;
+	//background-color: blue;
+	position: absolute;
+} 
+
+#scale {
+	width: 100px;
+	height: 120px;
+	//position: absolute;
+	//background-color: red;
+	border: 1px solid black;
+	border-radius: 5px;
+	position:relative;	
+}
+
+#weight_panel {
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	border: 1px solid black;
+	border-radius: 2px;
+	text-align: center;
+}
+
+#clock {
+	width: 100px;
+	height: 100px;
+	//position: absolute;
+	//background-color: red;
+	border: 1px solid black;
+	border-radius: 25px;
+	position:relative;	
+	text-align:center;
+}
+
+
+
+
+
+
+
