@@ -13,105 +13,119 @@
   
 </head>
 
-<body>
+<body onload="initializePage()">
 
+<div class="row" id="row1">
 
-<section id="door">
-This is a locked door. There is a panel near the handle. <button onclick="displayPanel()">Try to enter a number?</button>
+<div class="col-sm-4">
+<div class="square" id ="door">
+A locked door. There is a panel near the handle. It seems that it is used to enter a password. Find a way to open this door!
 
 <div id="panel">
+<input id="panel_input" placeholder="Enter password"><button type="button" onclick="checkPW()">Enter</button>
 </div>
 
-<div id="door_status">
+<div id="door_status"></div>
+
+<div id="clue_1"></div>
+
+</div>
 </div>
 
-<div id="clue_1">
-</div>
-</section>
+<div class="col-sm-4">
+<div class="square" id="rooster_puzzle"> 
 
+
+<div id="rooster">A statue of a rooster. Its mouth is wide open as if trying to say something.</div>
+<div id="rooster_status"></div>
+<div id="tablet_screen"></div>
+<div id="rooster_clue"></div>
+<div id="display_key"></div>
+
+<div id="paper"></div>
+
+</div>
+</div>
+
+<div class="col-sm-4">
+<div id="clock_block" class="square">
+
+<p> A clock on the wall. The hour and minute display can be changed freely. </p>
+<div id="clock"></div>
 <br>
 
-
-<section id="rooster_puzzle"> 
-The rooster crows just before midnight.
-
-
-<div id="rooster">
-This is a rooster.
-</div>
-
-<div id="paper">
-</div>
-</section>
-
-
-
-<section id="clock_block">
-<p> A clock on the wall. The hour and minute hands can be adjusted freely. <p>
-<div id="clock">
-</div>
-<br>
 <p  onclick="displayClock()"> Try changing time? </p>
+
 <div id="clock_panel">
-<input id="hour" placeholder="Hour"><input id="minute" placeholder="minute">
+<input id="hour" type="number" placeholder="hr" min="0" max="23"><input id="minute" type="number" placeholder="min" min="0" max = "59">
 <button type="button" onclick="checkTime()">Change to this time</button>
 </div>
-</section>
+
+</div>
+</div>
+</div>
 
 
+<div class="row" id="row2">
 
-
-<section id="water_pouring_puzzle">
-<p> There are three cups; one is empty and two contain some water. </p>
-<button id="reset_button" onclick="initializeCups()"> Take a closer look? </button>
+<div class="col-sm-4">
+<div id="water_pouring_puzzle" class="square">
+<p> A counter. There are three cups on it; one is empty and two contain some water. Drag to pour water from a cup to another.</p>
+<button id="reset_button" onclick="initializeCups()" hidden> Reset </button>
 <br>
 
-<div id="table" style="visibility:hidden">
+
 <div class="container">
 <div class="cup" id="cup0" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-<div class="water" id="water0"> 
-</div>
+<div class="water" id="water0"> </div>
 </div>
 </div>
 
 <div class="container">
 <div class="cup" id="cup1" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-<div class="water" id="water1">
-</div>
+<div class="water" id="water1"></div>
 </div>
 </div>
 
 <div class="container">
 <div class="cup" id="cup2" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-<div class="water" id="water2">
+<div class="water" id="water2"></div>
 </div>
 </div>
+
+
 </div>
 </div>
 
-<div id="weight_1"></div>
-<div id="weight_2"></div>
-<div id="weight_3"></div>
-</section>
 
 
-
-
-<section id="scale_block">
-<p> A scale. It seems like it can measure the weight of the water cups. </p>
+<div class="col-sm-4">
+<div id="scale_block" class="square">
+<p> A scale. The number 4 is sloppily stuck on top. It seems like it can measure the weight of the water cups. Drag a cup to the scale to weigh it.</p>
 <div id="scale" ondrop="dropOnScale(event)" ondragover="allowDrop(event)">
 <div id="weight_panel"> 0 </div>
+<div id="clue_4" > 4 </div>
 </div>
 <br>
-<p id="weight_info"> </p>
-</section>
-
-
-
-<div id="puzzle">
+</div>
 </div>
 
-<div id="key_found">
+<div class="col-sm-4">
+<div class="square" id="stones_game">
+<p id="stones_game_description"></p>
+<div id="stones_remained"></div>
+
+<select id="stones_picked">
+</select>
+
+<button id="pick" onclick="pickStones()">Pick up</button>
+<button id="reset_stones" onclick="initializeStones()">Reset</button>
+
+<div id="bot_move"></div>
+<div id="stones_result"></div>
+</div>
+
+</div>
 </div>
 
 

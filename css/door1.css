@@ -21,9 +21,8 @@ header {
 
 
 #door{
-
-    padding: 1em;
-	text-align:left;
+	background-color:lavender;
+	border: 1px solid lavenderblush;
 }
 
 section {
@@ -38,7 +37,7 @@ div.container {
 	height: 100px;
 	//position: absolute;
 	//background-color: red;
-	border: 1px solid white;
+	//border: 1px solid white;
 	position:relative;
 }
 
@@ -53,22 +52,31 @@ div.cup {
 
 #cup0 {
 	top:20px;
-	height:80px;
+	height:81px;
 }
 
 #cup1 {
 	top:50px;
-	height:50px;
+	height:51px;
 }
 
 #cup2 {
 	top:70px;
-	height:30px;
+	height:31px;
 }
 
+div.square {
+	border: 1px solid #66ff66;
+	border-radius:5px;
+	min-height:300px;
+	padding:10px;
+	margin:5px;
+	background-color:#ccffcc;
+}
 
 div.water {
-	width: 38px;
+	width: 40px;
+	left: -1px;
 	//height: 50px;
 	//background-color: blue;
 	position: absolute;
@@ -82,6 +90,7 @@ div.water {
 	border: 1px solid black;
 	border-radius: 5px;
 	position:relative;	
+	background-color: lavenderblush;
 }
 
 #weight_panel {
@@ -93,19 +102,28 @@ div.water {
 	border: 1px solid black;
 	border-radius: 2px;
 	text-align: center;
+	background-color:white;
 }
 
 #clock {
 	width: 100px;
-	height: 100px;
+	height: 20px;
 	//position: absolute;
-	//background-color: red;
+	background-color: lavenderblush;
 	border: 1px solid black;
 	border-radius: 25px;
 	position:relative;	
 	text-align:center;
 }
 
+#clue_4 {
+	font-size:40px;
+	position: absolute;
+	top: 40px;
+	width: 100px;
+	text-align:center;
+	color:#ff99ff;
+}
 
 
 
