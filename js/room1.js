@@ -1,40 +1,36 @@
-/*
-function displayClock() {
-	}	var text = '<select id = "hour">';
-	for (i = 0; i <= 23; i++) {
-		text += '<option value="' + i + '">'+ i + '</option>';
-	}
-	text += '</select> <select id = "minute">';
-	for (i = 0; i <= 59; i++) {
-		text += '<option value="' + i + '">'+ i + '</option>';
-	}
-	text += '</select>';
-	document.getElementById("clock").innerHTML = text;
-}
-*/
+$(document).ready(function(){	
+	initializeRoom();	
+});
 
 
-
-function initializePage() {
-	initializeCups();
-	initializeStones();
-	initializeClock();
+var numBlocks = 6; 
+var pwd = "GGWP";
+		
+function initializeRoom() {		
+	drawp1();
+	drawp2();
+	drawp3();
+	drawp4();
+	drawp5();
+	drawp6();
 }
 
-function initializeClock() {
-	var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-	if (m<10) {
-		m = "0"+m;
-	}
-	document.getElementById('clock').innerHTML = h + ":" + m;
-    var t = setTimeout(startTime, 500);
+function drawp1() {
+	var text1 = "A locked door. There is a panel near the handle. It seems that it is used to enter a password. Find a way to open this door!";
+	document.getElementById("t1").innerHTML = text1;
+	
+	append1();
 }
 
+function append1() {
+	var div0 = '<div id="panel">';
+	div0 += '<input id="panel_input" placeholder="Enter password"><button type="button" onclick="checkPW()">Enter</button></div>';
+	div0 += '<br><div id="door"><div id="open"> <br>Yes this is a door</div><div id="clue_1"></div></div>';
+	div0 += '<div id="door_status"></div>';
+	
+	$("#a1").append(div0);
 
-var key_found = 0;
-var city_of_light = 0;
+}
 
 function checkPW() {
 	var pw = document.getElementById("panel_input").value;
@@ -47,19 +43,34 @@ function checkPW() {
 }
 
 function keyFound() {
-	document.getElementById("door_status").innerHTML = "The door is opened! You won!";
+	document.getElementById("door_status").innerHTML = "The door is opened! You won! ";
+	document.getElementById("clue_1").innerHTML = "The door is opening so slowly that you can't see it.";
+	var toHomePage = '<a href="../index.htm">Click here to go back to home page.</a>';
+	
+	$("#door_status").append(toHomePage);
 }
 
 
-/*
-
-function displayClock(){
-	var text = '<input id="hour" placeholder="Hour"><input id="minute" placeholder="minute">';
-	text += '<button type="button" onclick="checkTime()">Change to this time</button>';
-	document.getElementById("clock_panel").innerHTML = text;
+/*****Initialize puzzle 2 and 3 - Rooster and clock*****/
+function drawp2() {
+	var text2 = "A statue of a rooster. Its mouth is wide open as if trying to say something.";
+	document.getElementById("t2").innerHTML = text2;
+	
+	append2();
 }
-*/
+
+function append2() {
+	var div0 = '<div id="paper"></div>';
+	div0 += '<div id="rooster_clue"></div>';
+	div0 += '<div id="rooster_status"></div>';
+	div0 += '<div id="tablet_screen"></div>';
+
+	
+	$("#a2").append(div0);
+}
+
 var firstCard = 0;
+
 function checkTime() {
 	var hour = document.getElementById("hour").value;
 	var minute = document.getElementById("minute").value;
@@ -71,7 +82,7 @@ function checkTime() {
 		document.getElementById("rooster_status").innerHTML = first+"<br>"+second;
 		document.getElementById("clock").innerHTML = hour+":"+minute;
 	} else {
-		document.getElementById("rooster_status").innerHTML = "The rooster remains silent";
+		//document.getElementById("rooster_status").innerHTML = "The rooster remains silent";
 	}
 }
 
@@ -110,32 +121,67 @@ function displayNumber(letter) {
 	
 	document.getElementById("tablet_screen").innerHTML = "A number is displayed: " + number;
 }
-/**
-function displayPaper() {
-	//window.alert("Piece of paper added to inventory");
-	var alphabet = 'The piece of paper says: <br>abcdefghijklmnopq<span id="r" onclick=getKey()>r</span>stuvwxyz<br>4';
-	document.getElementById("paper").innerHTML = alphabet;
-}
-*/
 
-function getKey() {
-	if (city_of_light == 1) {
-		document.getElementById("display_key").innerHTML = "A number is carved into the letter. It says 1984!";
-		key_found = 1;
+function drawp3() {
+	var text3 = "A clock on the wall. The hour and minute display can be changed freely.";
+	document.getElementById("t3").innerHTML = text3;
+	
+	append3();
+	initializeClock();
+	
+}
+
+function append3() {
+	var div_clock = '<div id="clock"></div><br>';
+	var div_clock_panel = '<div id="clock_panel">'
+	div_clock_panel += '<input id="hour" type="number" placeholder="hr" min="0" max="23"><input id="minute" type="number" placeholder="min" min="0" max = "59">'
+	div_clock_panel += '<button type="button" onclick="checkTime()">Change to this time</button></div>';
+	
+	$("#a3").append(div_clock);
+	$("#a3").append(div_clock_panel);
+}
+
+function initializeClock() {
+	var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+	if (m<10) {
+		m = "0"+m;
 	}
+	document.getElementById('clock').innerHTML = h + ":" + m;
+    var t = setTimeout(function(){ initializeClock() }, 500);
 }
 
 
-/************* Water cups initialization module ****************/
+
+
+/*****Initialize puzzle 4 and 5 - Water cups*****/
 
 var numCups = 3;
 var cupHeight = new Array(80,50,30);
-
-
 var cup = new Array({height:cupHeight[0],level:0},{height:cupHeight[1],level:0},{height:cupHeight[2],level:0});
 
+function append4() {	
 
-function initializeCups() {	
+	var div0 = '<div class="container">';
+	div0 += '<div class="cup" id="cup0" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">';
+	div0 += '<div class="water" id="water0"> </div></div></div>';
+	
+	var div1 = '<div class="container">';
+	div1 += '<div class="cup" id="cup1" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">';
+	div1 += '<div class="water" id="water1"> </div></div></div>';
+	
+	var div2 = '<div class="container">';
+	div2 += '<div class="cup" id="cup2" draggable = "true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">';
+	div2 += '<div class="water" id="water2"> </div></div></div>';
+	
+	
+	$("#a4").append(div0);
+	$("#a4").append(div1);
+	$("#a4").append(div2);
+}
+
+function reset4() {
 	var initialLevel = new Array(80,0,0);
 	var i;
 	for (i=0; i<numCups; i++) {
@@ -143,17 +189,12 @@ function initializeCups() {
 		drawCup(i);
 		setWater(i);
 	}
-	document.getElementById("reset_button").innerHTML = "Reset";
-	//document.getElementById("table").style.visibility = "visible";
-
 }
 
 function drawCup(index) {
 	var cupName = "cup"+index;
 	document.getElementById(cupName).style.height = cup[index].height+"px";
-	//document.getElementById(cup).style.width = cupWidth+"px";
 	document.getElementById(cupName).style.top = 100 - cup[index].height+"px";
-	//document.getElementById(cup).style.left = cupLeft+"px";
 }
 
 function setWater(index) {
@@ -162,10 +203,6 @@ function setWater(index) {
 	document.getElementById(water).style.height = cup[index].level + "px";
 	document.getElementById(water).style.backgroundColor = "blue";
 }
-
-
-/*********** Water pouring module *****************/
-
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -187,7 +224,6 @@ function dropOnScale(ev) {
 	var og = ev.dataTransfer.getData("text");
 	var index = og[og.length-1];
 	document.getElementById("weight_panel").innerHTML = cup[index].level/10;
-	//document.getElementById("weight_info").innerHTML = "This cup weighs " + cup[index].level/10 + " oz";
 	checkWeight(cup[index].level/10);
 }
 
@@ -203,33 +239,83 @@ function pourWater(og,dest) {
 	setWater(id_to);
 }
 
+function drawp4() {
+	var text4 = "A counter. There are three cups on it; one is empty and two contain some water. Drag to pour water from a cup to another.";
+	document.getElementById("t4").innerHTML = text4;
+	append4();
+	reset4();
+}
+
 function checkWeight(num){
 	if (num == 4) {
-		document.getElementById("clue_1").innerHTML = 'A line appears on the door: <br> July 7, 23:16';
+		document.getElementById("clue_1").innerHTML = '<br> July 7, 23:16';
 		city_of_light = 1;
 	}
 }
 
-/*************** Stones game puzzle module *************/
 
+
+function drawp5() {
+	var text5 = "A scale. The number 4 is sloppily stuck on top. It seems like it can measure the weight of the water cups. Drag a cup to the scale to weigh it.";
+	document.getElementById("t5").innerHTML = text5;
+	
+	append5();
+}
+
+function append5() {
+	var div0 = '<div id="scale" ondrop="dropOnScale(event)" ondragover="allowDrop(event)">';
+	div0 += '<div id="weight_panel"> 0 </div>';
+	div0 += '<div id="clue_4" > 4 </div></div>';
+	
+	$("#a5").append(div0);
+}
+
+
+
+
+/*****Initialize puzzle 6 - Stones game*****/
 var num_stones = 0;
 var num_stones_allowed = 0;
+var remain;
 
 function setParameter() {
 	num_stones_allowed = Math.floor((Math.random() * 4) + 3);
+	num_stones = Math.floor((Math.random() * 10) + 15);
 	while (num_stones % (num_stones_allowed+1) == 0) {
 		num_stones = Math.floor((Math.random() * 10) + 15);
 	}
 }
 
-var remain;
 
-function initializeStones() {
+function append6() {
+	var div_stones_remained = "<div id='stones_remained'></div>";
+	var select_stones_picked = '<select id="stones_picked"></select>';
+	var button_pick = '<button id="pick" onclick="pickStones()">Pick up</button>';
+	var button_reset_stones = '<button id="reset_stones" onclick="reset6()">Reset</button>';
+	var div_bot_moves = '<div id="bot_move"></div>';
+	var div_stones_result = '<div id="stones_result"></div>';
+	
+	$("#a6").append(div_stones_remained);
+	$("#a6").append(select_stones_picked);
+	$("#a6").append(button_pick);
+	$("#a6").append(button_reset_stones);
+	$("#a6").append(div_bot_moves);
+	$("#a6").append(div_stones_result);
+}
+
+
+function drawp6() {
+	append6();
+	reset6();
+
+}
+
+function reset6() {
 	setParameter();
 	remain = num_stones;
 	var description = "A table. There are " + num_stones + " stones on it. A robot named Frank sits across the table."
 	var rule = "Each turn you and Frank can pick between 1 and "+num_stones_allowed+" stones. Whoever picks the last stone wins. You can go first. Try to win against Frank!"
-	document.getElementById("stones_game_description").innerHTML = description + " " + rule;
+	document.getElementById("t6").innerHTML = description + " " + rule;
 	
 	displayStones();
 	document.getElementById("bot_move").innerHTML = "" ;
@@ -283,7 +369,3 @@ function pickStones() {
 		displayStones();
 	}
 }
-
-
-var pwd = "GGWP";
-

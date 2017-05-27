@@ -1,0 +1,133 @@
+body {
+	//font-style: oblique;
+	font-family:trebuchet ms;
+
+}
+
+
+div.puzzle_container {
+	border: 1px solid #66ff66;
+	border-radius:5px;
+	height:300px;
+	padding:10px;
+	margin:5px;
+	background-color:#ccffcc;
+	
+}
+
+
+#p1 {
+	background-color:lavender;
+	border: 1px solid lavenderblush;
+}
+
+div.text {
+	text-align: center;
+	color: #993300;
+	background-color: white;
+	border: 1px solid lavenderblush;
+	border-radius: 5px;
+}
+
+div.anime {
+	display: table;
+	margin: 0 auto;
+	text-align:center;
+	color:#800000;
+	vertical-align: middle;
+}
+
+#door {
+	display: inline-block;
+	width: 120px;
+	height: 150px;
+	background: brown;
+	border-radius: 10%;
+	color:white;
+	text-align:center;
+}
+
+div.water {
+	width: 40px;
+	left: -1px;
+	//height: 50px;
+	//background-color: blue;
+	position: absolute;
+} 
+
+div.container {
+	float:left;
+	width: 100px;
+	height: 100px;
+	//position: absolute;
+	//background-color: red;
+	//border: 1px solid white;
+	position:relative;
+}
+
+div.cup {
+	width: 40px;
+	position: relative;
+	left: 30px;
+	border: 1px solid black;
+	//border-radius: 5px;
+	border-top: white;
+}
+
+#cup0 {
+	top:20px;
+	height:81px;
+}
+
+#cup1 {
+	top:50px;
+	height:51px;
+}
+
+#cup2 {
+	top:70px;
+	height:31px;
+}
+
+#scale {
+	width: 100px;
+	height: 120px;
+	//position: absolute;
+	//background-color: red;
+	border: 1px solid black;
+	border-radius: 5px;
+	position:relative;	
+	background-color: lavenderblush;
+}
+
+#weight_panel {
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	left: 30px;
+	border: 1px solid black;
+	border-radius: 2px;
+	text-align: center;
+	background-color:white;
+}
+
+#clock {
+	width: 100px;
+	height: 20px;
+	//position: absolute;
+	background-color: lavenderblush;
+	border: 1px solid black;
+	border-radius: 25px;
+	position:relative;	
+	text-align:center;
+}
+
+#clue_4 {
+	font-size:40px;
+	position: absolute;
+	top: 40px;
+	width: 100px;
+	text-align:center;
+	color:#ff99ff;
+}
