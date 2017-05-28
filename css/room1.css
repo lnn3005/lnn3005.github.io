@@ -1,46 +1,7 @@
-body {
-	//font-style: oblique;
-	font-family:trebuchet ms;
-	//background-image: url("../images/background.jpg");
-	background-color: #d9d9d9;
-	font-variant: small-caps;
-}
 
-
-div.puzzle_container {
-	border: 1px solid brown;
-	border-radius:5px;
-	height:300px;
-	padding:10px;
-	margin:5px;
-	background-color:#f2eee2;
-	
-}
-
-
-#p1 {
-	background-color:lavender;
-	//border: 1px solid lavenderblush;
-}
-
-div.text {
-	text-align: center;
-	color: #993300;
-	background-color: white;
-	border: 1px solid brown;
-	border-radius: 5px;
-}
-
-div.anime {
-	display: table;
-	margin: 0 auto;
-	text-align:center;
-	color:#800000;
-	vertical-align: middle;
-}
 #door {
 	display: inline-block;
-	width: 120px;
+	width: 150px;
 	height: 150px;
 	background: white;
 	color:white;
@@ -54,7 +15,7 @@ div.anime {
 
 #door_left {
 	//display: inline-block;
-	width: 60px;
+	width: 75px;
 	height: 150px;
 	background: #cc6600;
 	color:white;
@@ -67,7 +28,7 @@ div.anime {
 
 #door_right {
 	//display: inline-block;
-	width: 60px;
+	width: 75px;
 	height: 150px;
 	background: #cc6600;
 	color:white;
@@ -84,6 +45,7 @@ div.water {
 	//height: 50px;
 	//background-color: blue;
 	position: absolute;
+	border-radius:0 0 10% 10%;
 } 
 
 div.container {
@@ -103,6 +65,7 @@ div.cup {
 	border: 1px solid brown;
 	//border-radius: 5px;
 	border-top: white;
+	border-radius:0 0 10% 10%;
 }
 
 #cup0 {
@@ -171,4 +134,8 @@ input {
 
 button {
 	border: 1px solid brown;
+}
+
+a:hover {
+	text-decoration: none;
 }

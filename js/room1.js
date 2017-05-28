@@ -23,7 +23,7 @@ function drawp1() {
 
 function append1() {
 	var div0 = '<div id="panel">';
-	div0 += '<input id="panel_input" placeholder="Enter password"><button type="button" onclick="checkPW()">Enter</button></div>';
+	div0 += '<input id="panel_input" placeholder="Enter password"><button type="button" id="door_button" onclick="checkPW()">Enter</button></div>';
 	div0 += '<br><div id="door"><div id="door_left"><p id="clue_left"></p> </div><div id="door_right"><p id="clue_right"></p> </div></div>';
 	div0 += '<div id="door_status"></div>';
 	
@@ -58,6 +58,7 @@ function keyFound() {
 		$("#winMessage").fadeIn();
 	};
 	window.setTimeout( show_message, 1200 ); //1200 = 60*20; check slideLeft() and slideRight()
+	$("#door_button").attr("onclick","");
 }
 
 function slideLeft() {
@@ -100,8 +101,8 @@ function drawp2() {
 function append2() {
 	var div0 = '<div id="paper"></div>';
 	div0 += '<div id="rooster_clue"></div>';
-	div0 += '<div id="rooster_status"></div>';
-	div0 += '<div id="tablet_screen"></div>';
+	div0 += '<div id="rooster_status"></div><br>';
+	div0 += '<div id="tablet_screen"></div><br>';
 
 	
 	$("#a2").append(div0).hide().fadeIn(200);
@@ -152,7 +153,7 @@ function iterateAlphabet(){
 			string+="<br>";
 		}
 	}
-	return string+"<br>";
+	return "<br>"+string+"<br>";
 }
 function displayNumber(letter) {
 	var number = 0;

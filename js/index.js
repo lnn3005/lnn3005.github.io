@@ -2,9 +2,9 @@ $(document).ready(function(){
 	$("header").hide().fadeIn(1000);
 	$("nav").hide().delay(1200).fadeIn(200);
 	$("#description").hide().fadeIn(2000);
-	for (var i=1; i<=6; i++) {
+	for (var i=1; i<=8; i++) {
 		var id = "p"+i;
-		$("#"+id).hide().delay(i*200).fadeIn(i*200);
+		$("#"+id).hide().fadeIn(1000);
 	}
     $(".puzzle_container").click(function(){
 		var id = ($(this).attr("id"));
@@ -14,8 +14,12 @@ $(document).ready(function(){
 			var roomName = "puzzles/room"+num+".htm";		
 			window.location.href = roomName;
 		} else {
-			var messsage = "<div>This room is under construction. Please come back later. Actually only room 1 is playable, so don't bother with the other rooms.</div>";
-			$(this).append(message);
+			var div = "<div id='construction_massage_"+num+"'></div>";
+			$(this).append(div);
+			document.getElementById("construction_massage_"+num).innerHTML = "";
+			var message = "This room is under construction. Please come back later."
+			$("#construction_massage_"+num).append(message).hide().fadeIn(500);
+			
 		}
 	});
 	

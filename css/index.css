@@ -1,36 +1,20 @@
-body {
-	//font-style: oblique;
-	//font-family:trebuchet ms;
-	background-color:#d9d9d9;
-}
+
 
 
 div.puzzle_container {
 	border-radius:5px;
-	height:250px;
+	height:200px;
 	padding:10px;
 	margin:5px;
 	background-color:#f2eee2;
 	text-align: center;
 	color: brown;
 	font-variant: small-caps;
-	border: 1px solid brown;
+	border: 2px solid brown;
 }
 
-header {
-	//background-color:#F5FFFF;
-    //border-radius:10px;
-	//border: 1px solid #00FFFF;
-    padding: 1em;
-    clear: left;
-    text-align: left;
-	color: brown;
-	//background-color: #99cc00;
-	//max-width:320px;
-	margin-left: 20px;
-	font-variant: small-caps;
 
-}
+/*
 
 #description {
 	padding: 1em;
@@ -72,7 +56,7 @@ section {
 p.nav_header {
 	font-weight:bold;
 }
-
+*/
 
 
 
