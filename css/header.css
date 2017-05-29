@@ -21,12 +21,18 @@ header {
 	
 	
 }
+
+
+/*
 ul {
-    list-style-type: none;
     margin-left: 15px;
     padding: 0;
     overflow: hidden;
     background-color: #cc6600;
+}
+
+#bar {
+	 list-style-type: none;
 }
 
 li {
@@ -40,9 +46,9 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
+*/
 
 li a:hover {
     background-color: #ffcc66;
 	text-decoration: none;
 }
-

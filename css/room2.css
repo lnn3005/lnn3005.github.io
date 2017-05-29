@@ -1,0 +1,120 @@
+#door {
+}
+
+div.triangle_wrapper {
+	height:30px;
+	width:240px;
+	display: inline-block;
+	//background-color:white;
+}
+
+
+
+
+
+.triangle {
+	width: 0; 
+	height: 0; 
+	float:left;
+	position:relative;
+	margin:10px;
+}
+
+#tri0 {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;	
+	border-right: 20px solid brown;
+}
+
+#tri1 {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;	
+	border-bottom: 20px solid brown;
+}
+
+#tri2 {
+	border-left: 20px solid transparent;	
+	border-bottom: 20px solid brown;
+}
+
+#tri3 {
+	border-right: 20px solid transparent;	
+	border-top: 20px solid brown;
+}
+
+#tri4 {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;	
+	border-top: 20px solid brown;
+}
+
+#tri5 {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;	
+	border-left: 20px solid brown;
+}
+
+#td0 {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;	
+	border-right: 20px solid brown;
+}
+
+#td1 {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;	
+	border-bottom: 20px solid brown;
+}
+
+#td2 {
+	border-left: 20px solid transparent;	
+	border-bottom: 20px solid brown;
+}
+
+#td3 {
+	border-right: 20px solid transparent;	
+	border-top: 20px solid brown;
+}
+
+#td4 {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;	
+	border-top: 20px solid brown;
+}
+
+#td5 {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;	
+	border-left: 20px solid brown;
+}
+
+
+div.compass{
+	
+	border: 1px solid brown;
+	float:left;
+	position:relative;
+	width:12.5%;
+	height:10%;
+}
+
+#compass_wrapper{
+	width:240px;
+	display: inline-block;
+}
+
+#slider_wrapper {
+	width:240px;
+	display: inline-block;
+	height:10px;
+	border: 1px solid brown;
+	background-color: white;
+}
+
+#slider {
+	//display: inline-block;
+	width: 0px;
+	height: 9px;
+	background-color:brown;
+	float:left;
+}

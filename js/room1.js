@@ -1,7 +1,56 @@
 $(document).ready(function(){	
-	initializeRoom();	
+	initializeRoom();		
+	$(".puzzle_container").hover(function() {
+		$(".puzzle_container").css("border","10px solid brown");
+		$("#"+this.id).css("border","5px solid #cc6600");
+		addDescription(this.id);
+		$("#object_description").animate({left:'0'},200);
+	},
+	function() {
+		$("#object_description").css("left","-100%");
+	});
 });
 
+function addDescription(id) {	
+	var txt;
+	switch (id) {
+		case "p1":
+			txt = description_p1;
+			break;
+		case "p2":
+			txt = description_p2;
+			break;
+		case "p3":
+			txt = description_p3;
+			break;
+		case "p4":
+			txt = description_p4;
+			break;
+		case "p5":
+			txt = description_p5;
+			break;
+		case "p6":
+			txt = description_p6;
+			break;
+		default:
+			txt = "addDescription bug detected"
+			break;
+	}
+	$("#object_description").html(txt);
+}
+
+var description_p1 = "A locked door. There is a panel near the handle. It seems that it is used to enter a password. Find a way to open this door!";
+var description_p2 = "A statue of a rooster. Its mouth is wide open as if trying to say something.";
+var description_p3 = "A clock on the wall. The hour and minute display can be changed freely.";
+var description_p4 = "A counter. There are three water cups on it; two are empty and one is full. Drag to pour water from a cup to another.";
+var description_p5 = "A scale. The number 4 is sloppily stuck on top. It seems like it can measure the weight of the water cups. Drag a cup to the scale to weigh it.";
+var description_p6 = "A table. There are a number of small stones on it. A robot sits across the table. It wants to play a game with you!"
+
+
+
+
+
+/*************************************************************************************/
 
 var numBlocks = 6; 
 var pwd = "GGWP";
@@ -16,7 +65,7 @@ function initializeRoom() {
 }
 
 function drawp1() {
-	var text1 = "A locked door. There is a panel near the handle. It seems that it is used to enter a password. Find a way to open this door!";
+	var text1 = "Door";
 	$("#t1").append(text1).hide().fadeIn(1000);
 	append1();
 }
@@ -59,6 +108,7 @@ function keyFound() {
 	};
 	window.setTimeout( show_message, 1200 ); //1200 = 60*20; check slideLeft() and slideRight()
 	$("#door_button").attr("onclick","");
+	description_p1 = "The door is open. Good game well play!"
 }
 
 function slideLeft() {
@@ -92,7 +142,7 @@ function slideRight() {
 
 /*****Initialize puzzle 2 and 3 - Rooster and clock*****/
 function drawp2() {
-	var text2 = "A statue of a rooster. Its mouth is wide open as if trying to say something.";
+	var text2 = "Rooster statue";
 	$("#t2").append(text2).hide().fadeIn(1000);
 	
 	append2();
@@ -123,6 +173,7 @@ function checkTime() {
 		document.getElementById("check_time").innerHTML = "";
 		var first = "The rooster crows. It also spits out a tablet!";
 		var second = "A keyboard can be seen on the tablet:<br>" + iterateAlphabet();
+		description_p2 = "A tablet. A number appears on the screen each time you click on a letter.";
 		//document.getElementById("rooster_status").innerHTML = first+"<br>"+second;
 		var txt = first+"<br>"+second;
 		document.getElementById("rooster_status").innerHTML = "";
@@ -177,7 +228,7 @@ function displayNumber(letter) {
 }
 
 function drawp3() {
-	var text3 = "A clock on the wall. The hour and minute display can be changed freely.";
+	var text3 = "Clock";
 	$("#t3").append(text3).hide().fadeIn(1000);
 	
 	append3();
@@ -329,7 +380,7 @@ function pourWater(og,dest) {
 }
 
 function drawp4() {
-	var text4 = "A counter. There are three cups on it; one is empty and two contain some water. Drag to pour water from a cup to another.";
+	var text4 = "Cups";
 	$("#t4").append(text4).hide().fadeIn(1000); 
 	append4();
 	reset4();
@@ -339,6 +390,8 @@ function checkWeight(num){
 	if (num == 4) {
 		var clue_left = '<br> July 7';
 		var clue_right = '<br> 23:16';
+		description_p1 += "<br>A date and time is revealed on the door!";
+		description_4 = "";
 		$("#clue_left").append(clue_left).hide().fadeIn(2000);
 		$("#clue_right").append(clue_right).hide().fadeIn(2000);
 	}
@@ -347,7 +400,7 @@ function checkWeight(num){
 
 
 function drawp5() {
-	var text5 = "A scale. The number 4 is sloppily stuck on top. It seems like it can measure the weight of the water cups. Drag a cup to the scale to weigh it.";
+	var text5 = "Scale";
 	$("#t5").append(text5).hide().fadeIn(1000); 
 	
 	append5();
@@ -372,14 +425,12 @@ var remain;
 
 function setParameter() {
 	num_stones_allowed = Math.floor((Math.random() * 4) + 3);
-	num_stones = Math.floor((Math.random() * 10) + 15);
-	while (num_stones % (num_stones_allowed+1) == 0) {
-		num_stones = Math.floor((Math.random() * 10) + 15);
-	}
+	num_stones = 19;
 }
 
 
 function append6() {
+	var rule = "<div id='rule'></div><br>";
 	var div_stones_remained = "<div id='stones_remained'></div>";
 	var select_stones_picked = '<select id="stones_picked"></select>';
 	var button_pick = '<button id="pick" onclick="pickStones()">Pick up</button>';
@@ -387,7 +438,7 @@ function append6() {
 	var div_bot_moves = '<div id="bot_move"></div>';
 	var div_stones_result = '<div id="stones_result"></div>';
 	
-	
+	$("#a6").append(rule);
 	$("#a6").append(select_stones_picked).hide().fadeIn(500);
 	$("#a6").append(button_pick).hide().fadeIn(500);
 	$("#a6").append(button_reset_stones).hide().fadeIn(500);
@@ -398,6 +449,9 @@ function append6() {
 
 
 function drawp6() {
+	var text6 = "Bot game";
+	$("#t6").append(text6).hide().fadeIn(1000); 
+	
 	append6();
 	reset6();
 
@@ -406,11 +460,12 @@ function drawp6() {
 function reset6() {
 	setParameter();
 	remain = num_stones;
-	var description = "A table. There are <b>" + num_stones + "</b> stones on it. A robot sits across the table."
-	var rule = "Each turn you and The bot can pick between <b>1</b> and <b>"+num_stones_allowed+"</b> stones. Whoever picks the last stone wins. You can go first. Try to win against The bot!"
-	var txt = description + " " + rule;
-	document.getElementById("t6").innerHTML = "";
-	$("#t6").append(txt).hide().fadeIn(1000);
+	var txt = "Each turn you and the bot can pick between <b>1</b> and <b>"+num_stones_allowed+"</b> stones. Whoever picks the last stone wins. You can go first. Try to win against the bot!";
+	$("#rule").html("");
+	$("#rule").html(txt);
+	
+	//document.getElementById("a6").innerHTML = "";
+	//$("#t6").append(txt).hide().fadeIn(1000);
 	
 	displayStones();
 	document.getElementById("bot_move").innerHTML = "" ;
@@ -445,6 +500,7 @@ function pickStones() {
 	if (remain == 0) {
 		document.getElementById("stones_result").innerHTML = "";
 		$("#stones_result").append("You won! The bot looks sad. Also, a sound can be heard from the rooster statue.").hide().delay(500).fadeIn(1000);
+		description_p6 += "A table. There are a number of small stones on it. A robot sits across the table. The bot is upset and doesn't want to play with you anymore."
 		$("#pick").hide();
 		$("#stones_picked").hide();
 		$("#reset_stones").hide();

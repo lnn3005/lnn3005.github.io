@@ -5,7 +5,7 @@ div.puzzle_container {
 	border-radius:5px;
 	height:320px;
 	padding:10px;
-	margin:5px;
+	margin-bottom:10px;
 	background-color:#f2eee2;
 	
 }
@@ -32,3 +32,17 @@ div.anime {
 	color:#800000;
 	vertical-align: middle;
 }
+
+#object_description {
+	margin: 30px;
+	margin-left:0;
+	padding:20px;
+	border: 2px solid brown;
+	border-left:0;
+	border-radius: 0 5px 5px 0;
+	height:260px;
+	width:100%;
+	left:-100%;
+	position:absolute;
+}
+
