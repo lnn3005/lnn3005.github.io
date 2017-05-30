@@ -2,13 +2,13 @@ $(document).ready(function(){
 	$("#puzzles_body").hide().fadeIn(1000);
 	initRoom();;		
 	$(".puzzle_container").hover(function() {
-		$(".puzzle_container").css("border","10px solid brown");
-		$("#"+this.id).css("border","5px solid #cc6600");
+		$("#"+this.id).css("border","3px solid #cc6600");
 		addDescription(this.id);
 		$("#object_description").animate({left:'0'},200);
 	},
 	function() {
 		$("#object_description").css("left","-100%");
+        $("#"+this.id).css("border","6px solid brown");
 	});
 });
 

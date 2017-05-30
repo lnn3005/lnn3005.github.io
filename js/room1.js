@@ -1,13 +1,13 @@
 $(document).ready(function(){	
 	initializeRoom();		
 	$(".puzzle_container").hover(function() {
-		$(".puzzle_container").css("border","10px solid brown");
-		$("#"+this.id).css("border","5px solid #cc6600");
+		$("#"+this.id).css("border","3px solid #cc6600");
 		addDescription(this.id);
 		$("#object_description").animate({left:'0'},200);
 	},
 	function() {
 		$("#object_description").css("left","-100%");
+        $("#"+this.id).css("border","6px solid brown");
 	});
 });
 
@@ -43,7 +43,7 @@ var description_p1 = "A locked door. There is a panel near the handle. It seems 
 var description_p2 = "A statue of a rooster. Its mouth is wide open as if trying to say something.";
 var description_p3 = "A clock on the wall. The hour and minute display can be changed freely.";
 var description_p4 = "A counter. There are three water cups on it; two are empty and one is full. Drag to pour water from a cup to another.";
-var description_p5 = "A scale. The number 4 is sloppily stuck on top. It seems like it can measure the weight of the water cups. Drag a cup to the scale to weigh it.";
+var description_p5 = "A scale. The number 4 is sloppily drawn on top. It seems like it can measure the weight of the water cups. Drag a cup to the scale to weigh it.";
 var description_p6 = "A table. There are a number of small stones on it. A robot sits across the table. It wants to play a game with you!"
 
 
@@ -172,7 +172,7 @@ function checkTime() {
 		$("#rooster_clue").hide();
 		document.getElementById("check_time").innerHTML = "";
 		var first = "The rooster crows. It also spits out a tablet!";
-		var second = "A keyboard can be seen on the tablet:<br>" + iterateAlphabet();
+		var second = "A keypad can be seen on the tablet:<br>" + iterateAlphabet();
 		description_p2 = "A tablet. A number appears on the screen each time you click on a letter.";
 		//document.getElementById("rooster_status").innerHTML = first+"<br>"+second;
 		var txt = first+"<br>"+second;
@@ -199,7 +199,11 @@ function iterateAlphabet(){
 	var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	for(var i=0; i<str.length; i++) {
 	    var nextChar = str.charAt(i);
-		string+="<button onclick=displayNumber('"+nextChar+"')>"+nextChar+"</button>"; 
+        if (i == 4 || i == 11 || i == 17 || i == 21 ) {
+            string+="<button class='letter' onclick=displayNumber('"+nextChar+"')>"+nextChar+"</button>"; 
+        } else {
+            string+="<button class='letter' > ? </button>"; 
+        }
 		if (i%9==8) {
 			string+="<br>";
 		}

@@ -1,7 +1,7 @@
 
 
 div.puzzle_container {
-	border: 10px solid brown;
+	border: 6px solid brown;
 	border-radius:5px;
 	height:320px;
 	padding:10px;
@@ -13,7 +13,7 @@ div.puzzle_container {
 
 
 #p1 {
-	background-color:lavender;
+	background-color:#ddffff;
 	//border: 1px solid lavenderblush;
 }
 
@@ -37,7 +37,7 @@ div.anime {
 	margin: 30px;
 	margin-left:0;
 	padding:20px;
-	border: 2px solid brown;
+	border: 1px solid black;
 	border-left:0;
 	border-radius: 0 5px 5px 0;
 	height:260px;

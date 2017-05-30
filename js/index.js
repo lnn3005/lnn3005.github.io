@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	//$("header").hide().fadeIn(1000);
-	//$("nav").hide().delay(1200).fadeIn(200);
-	//$("#description").hide().fadeIn(2000);
 	for (var i=1; i<=8; i++) {
 		var id = "p"+i;
 		$("#"+id).hide().fadeIn(1000);
@@ -15,8 +12,8 @@ $(document).ready(function(){
 			window.location.href = roomName;
 		} else {
 			var div = "<div id='construction_massage_"+num+"'></div>";
-			$(this).append(div);
-			document.getElementById("construction_massage_"+num).innerHTML = "";
+			$("#a"+num).append(div);
+			//$(".anime").html("");
 			var message = "This room is under construction. Please come back later."
 			$("#construction_massage_"+num).append(message).hide().fadeIn(500);
 			

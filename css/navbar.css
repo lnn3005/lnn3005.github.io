@@ -1,12 +1,14 @@
 .navbar-custom {
 	background-color: #cc6600;
 	//border-color: #ffcc66;
+    border-radius:0;
 }
 
 
 .navbar-custom .navbar-brand {
 	color: #ffffff;
 	border-right: 1px solid brown;
+    //margin-left: 10px;
 }
 
 .navbar-custom .navbar-text {
