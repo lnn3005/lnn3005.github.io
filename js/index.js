@@ -11,6 +11,7 @@ $(document).ready(function(){
 			var roomName = "puzzles/room"+num+".htm";		
 			window.location.href = roomName;
 		} else {
+            $("#a"+num).html("");
 			var div = "<div id='construction_massage_"+num+"'></div>";
 			$("#a"+num).append(div);
 			//$(".anime").html("");
