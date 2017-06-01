@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$(".puzzle_container").hover(function() {
 		$("#"+this.id).css("border","3px solid #cc6600");
 		addDescription(this.id);
-		$("#object_description").animate({left:'0'},200);
+		$("#object_description").animate({left:'0'},100);
 	},
 	function() {
 		$("#object_description").css("left","-100%");
@@ -72,7 +72,7 @@ function drawp1() {
 
 function append1() {
 	var div0 = '<div id="panel">';
-	div0 += '<input id="panel_input" placeholder="Enter password"><button type="button" id="door_button" onclick="checkPW()">Enter</button></div>';
+	div0 += '<input id="panel_input" type="text" pattern="[A-Z]" placeholder="Enter password"><button type="button" id="door_button" onclick="checkPW()">Enter</button></div>';
 	div0 += '<br><div id="door"><div id="door_left"><p id="clue_left"></p> </div><div id="door_right"><p id="clue_right"></p> </div></div>';
 	div0 += '<div id="door_status"></div>';
 	
@@ -88,7 +88,7 @@ function append1() {
 function checkPW() {
 	var pw = document.getElementById("panel_input").value;
 	
-	if (pw == pwd) {
+	if (pw.toLowerCase() == pwd.toLowerCase()) {
 		keyFound();
 	} else {
 		//document.getElementById("door_status").innerHTML = 'The door is shut tight.';
@@ -108,7 +108,7 @@ function keyFound() {
 	};
 	window.setTimeout( show_message, 1200 ); //1200 = 60*20; check slideLeft() and slideRight()
 	$("#door_button").attr("onclick","");
-	description_p1 = "The door is open. Good game well play!"
+	description_p1 = "The door is open. Good game well play!";
 }
 
 function slideLeft() {

@@ -1,4 +1,73 @@
+
+.door_wrapper {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	background: white;
+	text-align:center;
+	//position: absolute;
+	border: 1px solid brown;
+}
+
 #door {
+    width: 150px;
+	height: 150px;
+	background: grey;
+	color:white;
+	text-align:center;
+	//position:absolute;
+	float:left;
+	border: 1px solid black;
+	font-variant: small-caps;
+}
+
+.square_wrapper {
+    display: inline-block;
+    width:120px;
+    height:120px;
+    background-color:white;
+    //border:1px solid black;
+
+}
+
+.row_odd {
+    height: 20px;
+}
+
+.row_even {
+    height:30px;
+}
+
+.light_square {
+    //background-color:white;
+    //position:absolute;
+    float:left;
+    width: 20px;
+    height:20px;
+    opacity:100;
+}
+
+/*
+.big_square {
+    width:44px;
+    height:44px;
+    border: 1px solid black;
+    float:left;
+    background-color:white;
+    border-radius:100%;
+}
+*/
+
+.connector_horizontal {
+    float:left;
+    height:20px;
+    width:30px;
+}
+
+.connector_vertical {
+    float:left;
+    height:30px;
+    width:20px;
 }
 
 div.triangle_wrapper {
@@ -8,10 +77,6 @@ div.triangle_wrapper {
 	//background-color:white;
 }
 
-
-
-
-
 .triangle {
 	width: 0; 
 	height: 0; 
@@ -20,74 +85,39 @@ div.triangle_wrapper {
 	margin:10px;
 }
 
-#tri0 {
+#tri0, #td0 {
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;	
 	border-right: 20px solid brown;
 }
 
-#tri1 {
+#tri1, #td1 {
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;	
 	border-bottom: 20px solid brown;
 }
 
-#tri2 {
+#tri2, #td2 {
 	border-left: 20px solid transparent;	
 	border-bottom: 20px solid brown;
 }
 
-#tri3 {
+#tri3, #td3 {
 	border-right: 20px solid transparent;	
 	border-top: 20px solid brown;
 }
 
-#tri4 {
+#tri4, #td4 {
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;	
 	border-top: 20px solid brown;
 }
 
-#tri5 {
+#tri5, #td5 {
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;	
 	border-left: 20px solid brown;
 }
-
-#td0 {
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;	
-	border-right: 20px solid brown;
-}
-
-#td1 {
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;	
-	border-bottom: 20px solid brown;
-}
-
-#td2 {
-	border-left: 20px solid transparent;	
-	border-bottom: 20px solid brown;
-}
-
-#td3 {
-	border-right: 20px solid transparent;	
-	border-top: 20px solid brown;
-}
-
-#td4 {
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;	
-	border-top: 20px solid brown;
-}
-
-#td5 {
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;	
-	border-left: 20px solid brown;
-}
-
 
 div.compass{
 	
@@ -118,3 +148,105 @@ div.compass{
 	background-color:brown;
 	float:left;
 }
+
+.clue_wrapper {
+    position:absolute;
+    //top:100px;
+}
+
+.clue_row {
+    width:100%;
+    height:20px;
+    font-size:12px;
+    opacity: 0;
+}
+
+
+.what_wrapper {
+    height: 100px;
+    position:relative;
+    top:60px;	
+    text-align:center;
+	color:black;
+    font-family:Waiting for the Sunrise;
+    font-size:30px;
+}
+
+.balance_wrapper {
+    height: 140px;
+    width: 200px;
+    //background-color:red;
+}
+
+.support_row {
+    height: 20px;
+    width: 200px;
+}
+
+.weight_row {
+    height: 30px;
+    width: 200px;
+}
+
+#b_0 {
+    width:100px;
+    height:20px;
+    border-right:1px solid black;
+    float:left;
+}
+
+#b_1 {
+    width:120px;
+    height:20px;
+    border-right:1px solid black;
+    border-left:1px solid black;
+    border-top:1px solid black;
+    left: 20px;
+    position:relative;
+}
+
+#b_3 {
+    width:140px;
+    height:20px;
+    border-right:1px solid black;
+    float:left;
+}
+
+#b_4 {
+    width:120px;
+    height:20px;
+    border-right:1px solid black;
+    border-left:1px solid black;
+    border-top:1px solid black;
+    left: 60px;
+    position:relative;
+}
+
+.weight {
+    height: 30px;
+    width: 40px;
+    border: 1px solid green;
+    float:left;
+    position:relative;
+    padding:5px;
+}
+
+#w_2 {
+    left: 80px;
+    border: 1px solid red;
+}
+
+#w_3 {
+    left:40px;
+}
+
+#w_4{
+    float:right;
+}
+
+.weight_selection_row {
+    width: 200px;
+    height:40px;
+    //border:1px solid black;
+}
+
