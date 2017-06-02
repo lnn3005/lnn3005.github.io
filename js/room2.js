@@ -270,12 +270,12 @@ function changeWeightPosition(og,dest) {
 }
 
 function checkBalance() {
-    if (2*$("#w_3").html() == +$("#w_4").html()) {
+    if (2*$("#w_3").html() == +$("#w_4").html() && +$("#w_4").html() != 0) {
         $("#w_2").attr("ondragover","allowDrop(event)");
         $("#w_2").attr("draggable","true");
         $("#w_2").css("border","1px solid green");
         
-        if (2*$("#w_1").html() ==  +$("#w_2").html() + 2*$("#w_3").html() + +$("#w_4").html()) {
+        if (2*$("#w_1").html() ==  +$("#w_2").html() + 2*$("#w_3").html() + +$("#w_4").html() && +$("#w_1").html() != 0) {
             $("#cr3").css("opacity","100");
             $(".weight").attr("ondragover","");
             $(".weight").attr("draggable","false");
