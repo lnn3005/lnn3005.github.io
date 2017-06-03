@@ -275,7 +275,7 @@ function checkBalance() {
         $("#w_2").attr("draggable","true");
         $("#w_2").css("border","1px solid green");
         
-        if (2*$("#w_1").html() ==  +$("#w_2").html() + 2*$("#w_3").html() + +$("#w_4").html() && +$("#w_1").html() != 0) {
+        if (2*$("#w_1").html() ==  +$("#w_2").html() + +$("#w_3").html() + +$("#w_4").html() && +$("#w_1").html() != 0) {
             $("#cr3").css("opacity","100");
             $(".weight").attr("ondragover","");
             $(".weight").attr("draggable","false");
