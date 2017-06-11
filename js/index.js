@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var id = ($(this).attr("id"));
 		var num = id.charAt(1);
 		var t = "t"+num;
-		if (num<3) {
+		if (num<4) {
 			var roomName = "puzzles/room"+num+".htm";		
 			window.location.href = roomName;
 		} else {

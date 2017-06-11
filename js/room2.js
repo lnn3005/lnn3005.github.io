@@ -67,7 +67,6 @@ function init1() {
     var door = '<br><div class="door_wrapper"><div id="door"></div></div>';
     
     $("#a1").append(door);
-
 }
 
 function checkpw() {
@@ -75,11 +74,6 @@ function checkpw() {
 	
 	if (pw.toLowerCase() == pwd.toLowerCase()) {
 		keyFound();
-	} else {
-        alert("wrong");
-		//document.getElementById("door_status").innerHTML = 'The door is shut tight.';
-		//document.getElementById("door_status").innerHTML ="";
-		//$("#door_status").append('The door is shut tight.').hide().fadeIn(100);
 	}
 }
 
@@ -145,7 +139,11 @@ function init3() {
 	var div = "<div id='compass_wrapper'>";
 	
 	for (var i=0; i<=7; i++) {
-		div += "<div class='compass' id='c"+i+"'>" +legend[i]+ "</div>";
+        if (i%2 == 0) {
+            div += "<div class='compass' id='c"+i+"'>" +legend[i]+ "</div>";
+        } else {
+            div += "<div class='compass' id='c"+i+"'>?</div>";
+        }
 	}
 	$("#a3").append(div);
 	appendSlider();

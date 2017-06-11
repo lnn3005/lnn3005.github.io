@@ -1,0 +1,227 @@
+.door_wrapper {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	background: white;
+	text-align:center;
+	//position: absolute;
+	border: 1px solid brown;
+}
+
+#door {
+    width: 150px;
+	height: 150px;
+	background: grey;
+	color:white;
+	text-align:center;
+	//position:absolute;
+	float:left;
+	border: 1px solid black;
+	font-variant: small-caps;
+    padding: 5px;
+}
+
+#eclipse_clue {
+    font-family: Courier New;
+}
+
+
+
+
+.solar_wrapper {
+    display: inline-block;
+	width: 200px;
+	height: 100px;
+	//background: white;
+	text-align:center;
+	//position: absolute;
+	//border: 1px solid brown;
+}
+
+#planet_row {
+    height:20px;
+    width: 100%;
+    position: relative;
+    top:20px;
+    //background-color:red;
+}
+
+#axis_row {
+    height:20px;
+    width: 100%;
+    //background-color:red;
+    position: relative;
+    top:20px;
+}
+
+.orb_helper {
+    height:10px;
+    position:relative;
+    border-right: 1px solid brown; 
+    border-bottom: 1px solid brown; 
+    float:left;
+}
+
+#oh_1 {
+    width:5%;
+    border-bottom: none;
+}
+
+#oh_2 {
+    width:60%;
+}
+
+#oh_3 {
+    width:30%;
+}
+
+.orb {
+    height:20px;
+    position:relative;
+    width:10%;
+    border: 1px solid brown;
+    border-radius:100%; 
+    float:left;
+}
+
+#sun_holder {
+    left:0px;
+}
+
+#moon_holder {
+    left:50%;
+}
+
+#earth_holder {
+    left:70%; 
+}
+
+#moon {
+    left:10%;
+}
+
+#sun {
+    left:20%;
+}
+
+#white {
+    left:30%;
+    background-color:white;
+}
+
+#green {
+    left:40%;
+    background-color:green;
+}
+
+#yellow {
+    left: 50%;
+    background-color:yellow;
+}
+
+
+
+
+.a5_row {
+    display: inline-block;
+    //width:220px;
+    //height:30px;
+}
+
+.letter_box {
+    position:relative;
+    float:left;
+    width:20px;
+    height:20px;
+    color:grey;
+    border-radius:25%;
+    //border: 1px solid brown;
+}
+
+#clue_wrapper {
+    padding:10px;
+    //background-color:green;
+}
+
+#screen_wrapper {
+    height:100px;
+    //width: 240px;
+    background-color:white;
+    border: 1px solid black;
+    //border-radius: 10%;
+}
+
+#r_wrapper {
+    display:inline-block;
+    margin-top:20px;
+}
+
+.r_clue {
+    position:relative;
+    height:20px;
+    width:20px;
+    float:left;
+    margin:2px;
+    background-color:white;
+    border: 1px solid black;
+}
+
+
+#panel_wrapper {
+    height:150px;
+    width:150px;
+    background-color:white;
+    border: 1px solid black;
+}
+
+.panel_row {
+    height:50px;
+    width:150px;
+}
+
+.arrow {
+    display:inline-block;
+    width: 0; 
+	height: 0; 
+    position: relative;
+    top: 15px;
+    border-right:20px solid transparent;
+    border-top:20px solid brown;
+    //margin:15px;
+    //border: 20px solid brown;
+}
+
+.arrow_ {
+    width:40px;
+    height:40px;
+    background-color:red;
+
+}
+
+.panel_block{
+    width:50px;
+    height:50px;
+    border:1px solid black;
+    position:relative;
+    float:left;
+}
+
+
+
+
+#msg_box {
+    font-size:30px;
+    font-family:Courier New;
+    padding: 10px;
+    border: 1px solid brown;
+    background-color:white;
+}
+
+#go_outward{
+    font-size:30px;
+    font-family:Courier New;
+}
+
+#pts {
+    font-size:10px;
+}
