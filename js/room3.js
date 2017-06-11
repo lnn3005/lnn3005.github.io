@@ -479,7 +479,7 @@ function init6() {
     $("#red_sun").html("<span class='w_left'><span class='more_r' id='l_6'>r</span>ed</span> <span class='w_right'>sun</span>");
     $("#solar_eclipse").html("sola<span class='more_r' id='l_7'>r</span> eclipse");
     
-    //$(".w_left").css("opacity","0");
-    //$(".w_right").css("opacity","0");
-    //$("#solar_eclipse").css("opacity","0");
+    $(".w_left").css("opacity","0");
+    $(".w_right").css("opacity","0");
+    $("#solar_eclipse").css("opacity","0");
 }
