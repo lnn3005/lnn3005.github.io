@@ -259,6 +259,7 @@ function checkR(id) {
             $("#r_2").html("O");
             break;
         default:
+            $(".r_clue").html("");
             break;
     }
 }
