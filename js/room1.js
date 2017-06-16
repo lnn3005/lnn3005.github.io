@@ -1,7 +1,7 @@
 $(document).ready(function(){	
 	initializeRoom();		
 	$(".puzzle_container").hover(function() {
-		$("#"+this.id).css("border","3px solid #cc6600");
+		$("#"+this.id).css("border","6px solid #cc6600");
 		addDescription(this.id);
 		$("#object_description").animate({left:'0'},100);
 	},
